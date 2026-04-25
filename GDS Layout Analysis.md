@@ -7,17 +7,22 @@ The final GDSII layout of the asynchronous FIFO was analyzed using both **Magic*
 ### Magic Layout Interpretation
 
 The Magic layout view represents the **post-routing physical realization** of the FIFO using the Sky130 standard cell library. The design appears as a dense rectangular region composed of repeated “brick-like” structures, which correspond to **standard cells such as flip-flops and logic gates**.
-
+<p align="center">
+<img src=".\Blocks\Magic.png" alt="Alt Text" width="700">
+</p>
 The presence of uniformly placed cells confirms that the design has undergone successful **placement and routing**, and the visible horizontal and vertical routing tracks indicate proper interconnections between logic elements. Long straight lines observed in the layout correspond to **power distribution networks (VDD/GND rails)** and global routing paths.
 
 Magic is primarily used for **physical verification**, including DRC checks, layout inspection, and validating the integrity of routing and power connectivity.
-
 
 ---
 
 ### KLayout GDS Visualization
 
 KLayout provides a more detailed and interpretable view of the layout, allowing clear observation of **cell placement, routing layers, IO pins, and signal labeling**.
+
+<p align="center">
+<img src=".\Blocks\Klayout.png" alt="Alt Text" width="700">
+</p>
 
 The layout can be divided into two distinct regions:
 
