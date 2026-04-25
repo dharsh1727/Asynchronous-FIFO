@@ -41,6 +41,7 @@ College of Engineering, Guindy, Anna University
 │     ├── sync_r2w.png
 │     ├── Magic.png
 │     ├── Klayout.png
+│     ├── Async_fifo.png
 ├── OpenLane_results.md
 ├── GDS Layout Analysis.md
 └── README.md
@@ -60,6 +61,10 @@ College of Engineering, Guindy, Anna University
 ---
 
 ## Architecture
+
+<p align="center">
+<img src=".\Blocks\Async_fifo.png" alt="Alt Text" width="700">
+</p>
 
 The design consists of the following blocks:
 
