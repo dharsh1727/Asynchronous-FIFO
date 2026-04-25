@@ -162,29 +162,13 @@ The FIFO is completely read out to verify that additional reads are blocked when
 ---
 
 ## Simulation Observation
-
+<img src=".\Output Waveform\Output_waveform.png" alt="Alt Text" width="900">
 The simulation confirms:
 
-- Correct FIFO ordering of data  
-- Proper full flag assertion  
-- Proper empty flag assertion  
-- Expected latency due to CDC synchronizers  
-- No overwrite during full condition  
-- No invalid read during empty condition  
+The waveform shows correct FIFO behavior during simultaneous write and read operations. Initially, `rdata` appears as unknown (`X`) because the memory is not reset, which is expected. Once valid writes occur, the data appears at the read side in the correct order, confirming proper FIFO functionality. However, the `empty` signal does not deassert immediately after a write because the write pointer must pass through a two-stage synchronizer before being visible in the read clock domain. This introduces a delay of about two `rclk` cycles, followed by an additional one-cycle delay due to registered memory read, resulting in an overall latency of roughly three read clock cycles from write to visible read data.
 
----
+In the full condition scenario, the FIFO fills up as continuous writes are applied without reads. The `full` signal asserts only after a short delay because the read pointer must first be synchronized into the write clock domain before the full condition can be evaluated. This again introduces a latency of about two `wclk` cycles. Even though write enable (`winc`) continues toggling, no data overwrite occurs because internal logic gates the write operation using `wen = winc & ~full`. The delayed assertion of the `full` flag is intentional and ensures safe operation without risking data corruption.
 
-## Project Structure
+During the empty condition, the FIFO is gradually drained as read operations continue. The `empty` signal asserts after a delay similar to the full condition, caused by synchronization of the write pointer into the read clock domain. Even when read enable (`rinc`) remains active, no invalid data is read because the operation is internally controlled using `ren = rinc & ~empty`. Overall, the observed behavior highlights that asynchronous FIFO designs inherently include synchronization delays, making them slightly conservative in flag updates, but guaranteeing correct data transfer without corruption across clock domains.
 
-```text
-.
-├── src/
-│   └── fifo.v
-│   └── fifo_memory.v
-|   └── rptr_empty.v
-|   └── wptr_full.v
-|   └── two_ff_sync.v
-├── Output Waveform/
-│   └── waveform images
-│
-└── README.md
+
