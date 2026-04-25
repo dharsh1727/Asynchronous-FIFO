@@ -18,7 +18,7 @@ College of Engineering, Guindy, Anna University
 ## Project Structure
 
 ```text
-.
+
 ├── src/
 |   └──Verilog
 │     ├── fifo.v
@@ -38,6 +38,8 @@ College of Engineering, Guindy, Anna University
 │     ├── wptr_full.png
 │     ├── sync_w2r.png
 │     ├── sync_r2w.png
+├── OpenLane_results.md
+├── GDS Layout Analysis.md
 └── README.md
 ```
 ---
