@@ -66,3 +66,61 @@ Key observations supporting this:
 - Significant multiplexer usage for data selection  
 
 This means the FIFO storage is realized as:
+Register-based memory (Flip-flops + MUX logic)
+
+
+While this approach ensures functional correctness and simplicity, it results in:
+
+- Higher area consumption  
+- Increased routing complexity  
+- Greater multiplexer usage  
+
+In contrast, industry implementations typically use **SRAM macros** for large FIFOs to achieve better area and power efficiency.
+
+---
+
+### Area and Utilization Insight
+
+The layout shows significant empty space around the active cell region. This aligns with the OpenLane report indicating:
+Low core utilization (~7%)
+
+
+This means:
+
+- The design occupies only a small portion of the available silicon area  
+- Routing congestion is minimal  
+- Placement is not tightly packed  
+
+This is expected for small designs and ensures easier routing and better timing closure.
+
+---
+
+### Routing Quality
+
+The routing observed in both Magic and KLayout shows:
+
+- Continuous metal interconnects  
+- No visible breaks or disconnections  
+- Clean horizontal and vertical routing tracks  
+
+This indicates:
+
+- Successful global and detailed routing  
+- No major congestion issues  
+- Proper power and signal distribution  
+
+---
+
+### Key Takeaways
+
+- The FIFO is implemented as a **standard-cell based design**, not using SRAM  
+- Memory is realized using **flip-flops**, leading to a dense uniform cell structure  
+- Control logic is physically separated and appears as an irregular cluster  
+- Dual clock domains (`wclk`, `rclk`) are correctly handled and routed  
+- The design is fully placed, routed, and physically valid with clean connectivity  
+
+---
+
+### Summary
+
+The GDS layout confirms that the asynchronous FIFO has been successfully transformed from RTL into a manufacturable silicon layout. The visualization clearly reflects the architectural components of the FIFO, including register-based memory, control logic, and CDC synchronizers, providing strong evidence of correct physical design implementation.
