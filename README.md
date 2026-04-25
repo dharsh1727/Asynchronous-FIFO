@@ -173,7 +173,7 @@ The FIFO is completely read out to verify that additional reads are blocked when
 
 ## Simulation Observation
 <p align="center">
-<img src=".\Output Waveform\Output_waveform.png" alt="Alt Text" width="700">
+<img src=".\Output Waveform\Output_waveform.png" alt="Alt Text" width="900">
 </p>
 The simulation confirms:
 
