@@ -1,6 +1,6 @@
 # OpenLane ASIC Implementation Results
 
-The asynchronous FIFO was implemented using the OpenLane RTL-to-GDSII flow with the Sky130 standard cell library.
+The asynchronous FIFO was implemented using the OpenLane RTL-to-GDSII flow with the Sky130 standard cell library(sky130_fd_sc_hd).
 
 ### Flow Status
 
