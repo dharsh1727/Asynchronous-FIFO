@@ -12,6 +12,7 @@ The presence of uniformly placed cells confirms that the design has undergone su
 
 Magic is primarily used for **physical verification**, including DRC checks, layout inspection, and validating the integrity of routing and power connectivity.
 
+
 ---
 
 ### KLayout GDS Visualization
