@@ -8,6 +8,14 @@ The FIFO supports independent write and read clocks, making it suitable for Cloc
 
 ---
 
+## Author
+
+**Priyadharshan L**  
+B.E., Electronics and Communication Engineering  
+College of Engineering, Guindy, Anna University  
+
+---
+
 ## Features
 
 - Dual-clock FIFO with independent `wclk` and `rclk`
@@ -27,13 +35,15 @@ The design consists of the following blocks:
 ### 1. FIFO Top Module
 
 The top module connects the memory, write pointer logic, read pointer logic, and synchronizers.
+<img src=".\Blocks\FIFO.png" alt="Alt Text" width="900">
 
 ### 2. FIFO Memory
 
 The memory block stores incoming data and supports independent write and read operations.
 
 - Write operation occurs in the `wclk` domain  
-- Read operation occurs in the `rclk` domain  
+- Read operation occurs in the `rclk` domain
+<img src=".\Blocks\fifo_mem.png" alt="Alt Text" width="900">
 
 ### 3. Write Pointer and Full Logic
 
@@ -41,7 +51,8 @@ The write pointer block maintains the write address and generates the `full` fla
 
 - Binary pointer is used for address generation  
 - Gray pointer is used for clock domain crossing  
-- Full condition is detected using the synchronized read pointer  
+- Full condition is detected using the synchronized read pointer
+<img src=".\Blocks\wptr_full.png" alt="Alt Text" width="900">
 
 ### 4. Read Pointer and Empty Logic
 
@@ -49,7 +60,8 @@ The read pointer block maintains the read address and generates the `empty` flag
 
 - Binary pointer is used for address generation  
 - Gray pointer is used for clock domain crossing  
-- Empty condition is detected using the synchronized write pointer  
+- Empty condition is detected using the synchronized write pointer
+<img src=".\Blocks\rptr_empty.png" alt="Alt Text" width="900">
 
 ### 5. Two Flip-Flop Synchronizer
 
@@ -57,7 +69,8 @@ The synchronizer safely transfers pointers between clock domains.
 
 - `wptr` is synchronized into the read clock domain  
 - `rptr` is synchronized into the write clock domain  
-
+<img src=".\Blocks\sync_w2r.png" alt="Alt Text" width="900">
+<img src=".\Blocks\sync_r2w.png" alt="Alt Text" width="900">
 ---
 
 ## Clock Domain Crossing
