@@ -29,6 +29,7 @@ College of Engineering, Guindy, Anna University
 |   ├──Openlane
 │     ├── config.json
 |     ├── pin_order.cfg
+|     ├── async_fifo.sdc
 ├── Output Waveform/
 │   └── Output_waveform.png
 ├── Blocks/
@@ -38,6 +39,8 @@ College of Engineering, Guindy, Anna University
 │     ├── wptr_full.png
 │     ├── sync_w2r.png
 │     ├── sync_r2w.png
+│     ├── Magic.png
+│     ├── Klayout.png
 ├── OpenLane_results.md
 ├── GDS Layout Analysis.md
 └── README.md
