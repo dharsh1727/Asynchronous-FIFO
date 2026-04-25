@@ -15,6 +15,32 @@ B.E., Electronics and Communication Engineering
 College of Engineering, Guindy, Anna University  
 
 ---
+## Project Structure
+
+```text
+.
+├── src/
+|   └──Verilog
+│     ├── fifo.v
+│     ├── fifo_memory.v
+│     ├── rptr_empty.v
+│     ├── wptr_full.v
+│     ├── two_ff_sync.v
+|   ├──Openlane
+│     ├── config.json
+|     ├── pin_order.cfg
+├── Output Waveform/
+│   └── Output_waveform.png
+├── Blocks/
+|     ├── FIFO.png
+│     ├── fifo_mem.png
+│     ├── rptr_empty.png
+│     ├── wptr_full.png
+│     ├── sync_w2r.png
+│     ├── sync_r2w.png
+└── README.md
+```
+---
 
 ## Features
 
