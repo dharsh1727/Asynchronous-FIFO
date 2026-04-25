@@ -1,0 +1,13 @@
+{
+  "DESIGN_NAME": "fifo",
+  "VERILOG_FILES": "dir::src/*.v",
+  "CLOCK_PORT": "wclk",
+  "CLOCK_NET": "wclk",
+  "CLOCK_PERIOD": 10,
+  "BASE_SDC_FILE": "dir::src/async_fifo.sdc",
+  "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 250 250",
+  "CORE_AREA": "20 20 230 230",
+  "FP_PDN_ENABLE": 1
+}
