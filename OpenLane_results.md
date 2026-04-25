@@ -50,7 +50,6 @@ The high number of flip-flops indicates that FIFO memory is implemented using re
 
 - **Routing Violations:** 0  
 - **LVS Errors:** 0  
-- **Antenna Violations:** 3 (minor)  
 
 The design is physically valid with clean routing and no major violations.
 
