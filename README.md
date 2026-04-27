@@ -47,7 +47,11 @@ College of Engineering, Guindy, Anna University
 └── README.md
 ```
 ---
+## Tools Used
 
+- **Vivado** – Functional simulation and verification  
+- **OpenLane (Sky130 PDK)** – RTL-to-GDSII ASIC flow  
+---
 ## Features
 
 - Dual-clock FIFO with independent `wclk` and `rclk`
